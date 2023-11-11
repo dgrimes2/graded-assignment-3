@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="~{fragments :: head}">
 </head>
-<body>
+<body class="job-listing">
 
 <div th:replace="~{fragments :: page-header}"></div>
 
@@ -11,7 +11,32 @@
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
   <!-- TODO #1 - Use a loop to display job results in a table. -->
-
+<!--display full GA#2joblistings: id, employer, location, position type, cc-->.
+<!--  each one gets a row <tr> like Unit 1, then heading and data (HTML)-->
+  <th:block th:each = "job:${jobs}">
+    <table class = "job-listing">
+      <tr>
+        <th> ID: </th>
+        <td th:text = "${job.id}"></td>
+      </tr>
+      <tr>
+        <th> Employer: </th>
+        <td th:text = "${job.employer}"></td>
+      </tr>
+      <tr>
+        <th> Location: </th>
+        <td th:text = "${job.location}"></td>
+      </tr>
+      <tr>
+        <th>Position Type: </th>
+        <td th:text = "${job.positionType}"></td>
+      </tr>
+      <tr>
+        <th>Skill: </th>
+        <td th:text = "${job.coreCompetency}"></td>
+      </tr>
+    </table>
+  </th:block>
 </div>
 
 </body>
