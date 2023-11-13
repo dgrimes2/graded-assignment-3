@@ -13,12 +13,16 @@
   <!-- TODO #1 - Use a loop to display job results in a table. -->
 <!--display full GA#2joblistings: id, employer, location, position type, cc-->.
 <!--  each one gets a row <tr> like Unit 1, then heading and data (HTML)-->
-  <th:block th:each = "job:${jobs}">
+  <th:block th:each = "job : ${jobs}">
     <table class = "job-listing">
       <tr>
         <th> ID: </th>
         <td th:text = "${job.id}"></td>
+      </tr><tr>
+        <th> Name: </th>
+        <td th:text = "${job.name}"></td>
       </tr>
+
       <tr>
         <th> Employer: </th>
         <td th:text = "${job.employer}"></td>
